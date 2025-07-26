@@ -1,0 +1,8 @@
+# Default ignored files
+/shelf/
+/.idea/workspace.xml
+email-template.html
+/logs/
+hs_err*.log
+/target/
+/screenshots/

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="INFO">
+    <Appenders>
+        <!-- Console Appender -->
+        <Console name="STDOUT" target="SYSTEM_OUT">
+            <Filters>
+                <ThresholdFilter level="INFO" onMatch="ACCEPT" onMismatch="DENY"/>
+            </Filters>
+            <PatternLayout pattern="%d{dd MMM yyyy HH:mm:ss} [%level] %logger{0}:%line -- %msg%n"/>
+        </Console>
+
+        <!-- Detailed File Appender -->
+        <File name="DETAILED_FILE" fileName="target/logDetails/detailed.log" append="true">
+            <PatternLayout pattern="%d{dd MMM yyyy HH:mm:ss.SSS} [Thread-id: %t] [%level] %logger{36}.%M(%logger{0}.class:%line) -- %msg%n"/>
+        </File>
+
+        <!-- Info File Appender -->
+        <File name="INFO_FILE" fileName="target/logDetails/information.log" append="true">
+            <Filters>
+                <ThresholdFilter level="INFO" onMatch="ACCEPT" onMismatch="DENY"/>
+            </Filters>
+            <PatternLayout pattern="%d{dd MMM yyyy HH:mm:ss} [%level] %logger{0}:%line -- %msg%n"/>
+        </File>
+    </Appenders>
+
+    <Loggers>
+        <Root level="info">
+            <AppenderRef ref="STDOUT"/>
+            <AppenderRef ref="DETAILED_FILE"/>
+            <AppenderRef ref="INFO_FILE"/>
+        </Root>
+    </Loggers>
+</Configuration>

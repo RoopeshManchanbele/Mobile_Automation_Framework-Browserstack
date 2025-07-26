@@ -1,0 +1,95 @@
+elements:
+  inAppCloseButton:
+    android:
+      type: accessibilityId
+      value: "inapp_close_btn"
+    ios:
+      type: accessibilityId
+      value: "inapp_close_btn"
+  getStarted:
+    android:
+      type: accessibilityId
+      value: "Get started"
+    ios:
+      type: accessibilityId
+      value: "Get started"
+  continue:
+    android:
+      type: accessibilityId
+      value: "Continue"
+    ios:
+      type: accessibilityId
+      value: "Continue"
+  englishRadioButton:
+    android:
+      type: accessibilityId
+      value: "English"
+    ios:
+      type: accessibilityId
+      value: "English"
+  enterNumberOrPin:
+    android:
+      type: xpath
+      value: "//android.widget.EditText"
+    ios:
+      type: xpath
+      value: "//android.widget.EditText"
+  enterTOTPHeader:
+    android:
+      type: accessibilityId
+      value: "Enter TOTP"
+    ios:
+      type: accessibilityId
+      value: "Enter TOTP"
+  enterOTPHeader:
+    android:
+      type: accessibilityId
+      value: "Enter OTP"
+    ios:
+      type: accessibilityId
+      value: "Enter OTP"
+  sendOTPButton:
+    android:
+      type: accessibilityId
+      value: "Problem with TOTP? Send OTP"
+    ios:
+      type: accessibilityId
+      value: "Problem with TOTP? Send OTP"
+  clientID:
+    android:
+      type: accessibilityId
+      value: "Login with client ID"
+    ios:
+      type: accessibilityId
+      value: "Login with client ID"
+  understandButton:
+    android:
+      type: accessibilityId
+      value: "I understand"
+    ios:
+      type: accessibilityId
+      value: "I understand"
+  closeButton:
+    android:
+      type: accessibilityId
+      value: "Close"
+    ios:
+      type: accessibilityId
+      value: "Close"
+  laterButton:
+    android:
+      type: accessibilityId
+      value: "Later"
+    ios:
+      type: accessibilityId
+      value: "Later"
+  alertHandler:
+    android:
+      type: xpath
+      value: "//*[@content-desc='Read more']/preceding-sibling::*[1]"
+    ios:
+      type: accessibilityId
+      value: "Later"
+
+
+

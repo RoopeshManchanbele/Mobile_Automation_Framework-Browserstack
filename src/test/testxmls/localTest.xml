@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Local Run" parallel="tests" thread-count="2">
+    <parameter name="os" value="${platform}"/>
+    <parameter name="testRunName" value="From Windows"/>
+    <test name="Testing">
+        <classes>
+            <class name="org.roopesh.tests.regression.LoginTest"/>
+        </classes>
+    </test>
+</suite>

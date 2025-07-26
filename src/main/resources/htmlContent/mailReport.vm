@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automation Test Summary - ${suiteName}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            background-color: #ffffff;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 600px;
+            margin: auto;
+        }
+        .link {
+            color: #008000;
+            font-weight: bold;
+        }
+        h1 {
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #dddddd;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.8em;
+            color: #aaa;
+        }
+       details {
+                   margin: 10px 0;
+               }
+
+               summary {
+                   cursor: pointer;
+                   font-weight: bold;
+               }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <p>Dear Recipient,</p>
+        <p>Below is the summary of the automation tests executed:</p>
+
+        <p>
+        <b>Automation Run - ${testRunName} </b>
+        </p>
+        <p>
+        <b>Execution Time - ${executionTime} </b>
+        </p>
+        <p>
+        <b>Build Version - 2.1.1 </b>
+        </p>
+        <table>
+                <tr>
+                    <th>Modules</th>
+                    <th>Total Tests</th>
+                    <th>Passed</th>
+                    <th>Failed</th>
+                    <th>Skipped</th>
+                </tr>
+                   #foreach( $modules in $moduleWiseTests)
+                       <tr>
+                           <td>${modules.get(0)}</td>
+                           <td>${modules.get(1)}</td>
+                           <td>${modules.get(2)}</td>
+                           <td>${modules.get(3)}</td>
+                           <td>${modules.get(4)}</td>
+                       </tr>
+                   #end
+                    <tr>
+                        <td></td>
+                        <td>${totalTests}</td>
+                        <td>${passedTests}</td>
+                        <td>${failedTests}</td>
+                        <td>${skippedTests}</td>
+                    </tr>
+        </table>
+
+        <p>
+        <b> Manual vs Automation Testcases Summary </b>
+        </p>
+        <table>
+                <tr>
+                    <th>Modules</th>
+                    <th>Manual Testcases</th>
+                    <th>Automatable Testcases</th>
+                    <th>Automated Testcases</th>
+                </tr>
+                #foreach ($outerList in $summaryCount)
+                    <tr>
+                        #foreach ($item in $outerList)
+                            <td>$item</td>
+                        #end
+                    </tr>
+                #end
+
+                <tr>
+                    <td><b>Total</b></td>
+                    <td>$automationSummaryCount.get(0)</td>
+                    <td>$automationSummaryCount.get(1)</td>
+                    <td>$automationSummaryCount.get(2)</td>
+                </tr>
+        </table>
+
+            #if($failedTestcases)
+            <div>
+                <b>Failed Testcases:</b>
+                <ol>
+                    #foreach ($failedTestcase in $failedTestcases)
+                    <li>${failedTestcase}</li>
+                    #end
+                </ol>
+            </div>
+            #end
+
+            #if($skippedTestcases)
+            <div>
+                <b>Skipped Testcases:</b>
+                <ol>
+                    #foreach($skippedTestcase in $skippedTestcases)
+                    <li>${skippedTestcase}</li>
+                    #end
+                </ol>
+            </div>
+            #end
+
+            <div>
+            Please click on
+            <a class="link" href="https://sheet.zoho.in/sheet/published/6jjk2892197fd8d7b4b4bbf4932b6e75b39b0">Test Suite</a>
+            for automation completion status.
+            </div>
+    </div>
+    <div class="footer">
+        <div>
+            <p>For any queries please reach out to <a href="mailto:qa_automationreports@fyers.in">Automation Team</a></p>
+            <div class="footer">Regards,</div>
+            <div class="footer">Automation Team</div>
+            <p>&copy; ${currentYear} FYERS. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+</html>
