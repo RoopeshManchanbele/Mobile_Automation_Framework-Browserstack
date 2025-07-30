@@ -145,16 +145,16 @@
 
             <div>
             Please click on
-            <a class="link" href="https://sheet.zoho.in/sheet/published/6jjk2892197fd8d7b4b4bbf4932b6e75b39b0">Test Suite</a>
+            <a class="link" href="#">Test Suite</a>
             for automation completion status.
             </div>
     </div>
     <div class="footer">
         <div>
-            <p>For any queries please reach out to <a href="mailto:qa_automationreports@fyers.in">Automation Team</a></p>
+            <p>For any queries please reach out to <a href="#">Automation Team</a></p>
             <div class="footer">Regards,</div>
             <div class="footer">Automation Team</div>
-            <p>&copy; ${currentYear} FYERS. All rights reserved.</p>
+            
         </div>
     </div>
 </body>
